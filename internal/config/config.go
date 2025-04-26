@@ -6,7 +6,7 @@ import (
 )
 
 type Config struct {
-	Postgres postgres.Config `yaml:"POSTGRES" env:"POSTGRES_HOST" env-default:"localhost"`
+	Postgres postgres.Config `yaml:"POSTGRES" env:"POSTGRES_HOST" env-default:"postgres"`
 	RESTPort string          `yaml:"REST_PORT" env:"REST_PORT" env-default:"8080"`
 }
 

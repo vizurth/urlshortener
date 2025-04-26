@@ -10,6 +10,7 @@ services:
       - "8080:8080"
     depends_on:
       - postgres
+    entrypoint: /bin/sh -c "sleep 10 && /service"
     networks:
       - app_network
   postgres:
