@@ -1,7 +1,7 @@
 REST_PORT: 8080
 POSTGRES:
-  POSTGRES_HOST: postgres.railway.internal
+  POSTGRES_HOST: centerbeam.proxy.rlwy.net
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: JWRsBKWGxEWYfBjbCgRRjaQFMxZZbxCj
   POSTGRES_DB: railway
-  POSTGRES_PORT: 5432
+  POSTGRES_PORT: 28799
