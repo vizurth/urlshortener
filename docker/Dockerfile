@@ -5,9 +5,10 @@ WORKDIR /app
 COPY . .
 RUN go mod download
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /service ./cmd/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o /app/service ./cmd/main.go
+RUN ls -al /app
 
 EXPOSE 8080
 
 # Run
-CMD ["/service"]
+CMD ["/app/service"]
