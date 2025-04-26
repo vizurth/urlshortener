@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  url_shortener_service:
+    container_name: url_shortener
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres_container_for_url_shortener
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+    postgres:
