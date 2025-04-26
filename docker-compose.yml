@@ -10,6 +10,8 @@ services:
       - "8080:8080"
     depends_on:
       - postgres
+    networks:
+      - app_network
   postgres:
     container_name: postgres_container_for_url_shortener
     image: postgres
@@ -22,6 +24,12 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
+    networks:
+      - app_network
 
 volumes:
     postgres:
+
+networks:
+  app_network:
+    driver: bridge
